@@ -2,24 +2,27 @@ import React, { Component } from 'react';
 
 class Gifs extends Component {
   state = {
-    image: ''
+    gifs: []
   }
 
   componentDidMount() {
     fetch(`http://api.giphy.com/v1/gifs/search?q=ron+swanson&api_key=${process.env.REACT_APP_API_KEY}`)
       .then(response => response.json())
       .then(data =>  {
-        // Select random index for gif in gifs
-        const i = Math.floor(10 * Math.random());
-        console.log(data.data[i].images);
-        this.setState({ image: data.data[i].images.original.url })
+        console.log((data.data[0]));
+        this.setState({ gifs: data.data })
+        console.log(typeof(this.state.gifs), this.state.gifs);
       });
   }
 
   render() {
     return (
       <div className="Gifs">
-        <img src={this.state.image} />
+        {
+          this.state.gifs.map((gif, id) => (
+            <img src={ gif.images.fixed_width.url } key="id" />
+          ))
+        }
       </div>
     );
   }
