@@ -1,0 +1,11 @@
+.Nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.Link {
+    margin: 1em;
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+}

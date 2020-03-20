@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Splash.css';
 
 class Splash extends Component {
   state = {
@@ -15,8 +16,8 @@ class Splash extends Component {
 
   render() {
     return (
-      <div className="App">
-        <p>{ this.state.quote }</p>
+      <div className="Splash">
+        <p className="Splash-Quote">{ this.state.quote }</p>
       </div>
     );
   }

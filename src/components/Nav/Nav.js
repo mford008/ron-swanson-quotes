@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+import './Nav.css';
+
 
 function Navbar() {
     return (
-      <div>
-        <Link to="/">Home </Link>
-        <Link to="/gifs">Gifs </Link>
+      <div className="Nav">
+        <Link to="/" className="Link">Home </Link>
+        <Link to="/gifs" className="Link">Gifs </Link>
       </div>
     );
 };
