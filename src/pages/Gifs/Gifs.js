@@ -4,6 +4,9 @@ import Masonry from 'react-masonry-component';
 import './Gifs.css';
 import Gif from '../../components/Gif/Gif';
 
+const masonryOptions = {
+  fitWidth: true,
+}
 class Gifs extends Component {
   state = {
     gifs: []
@@ -24,7 +27,7 @@ class Gifs extends Component {
         <Gif gif={gif}></Gif>
     ));
     return (
-        <Masonry>
+        <Masonry className="Gifs" options={masonryOptions}>
           {childGifs}
         </Masonry>
     );
