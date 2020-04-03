@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import './Nav.css';
 
@@ -7,8 +7,8 @@ import './Nav.css';
 function Navbar() {
     return (
       <div className="Nav">
-        <Link to="/" className="Link">Home </Link>
-        <Link to="/gifs" className="Link">Gifs </Link>
+        <NavLink exact to="/" className="NavLink" activeClassName="selected">Home </NavLink>
+        <NavLink to="/gifs" className="NavLink" activeClassName="selected">Gifs </NavLink>
       </div>
     );
 };

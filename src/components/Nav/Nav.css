@@ -3,14 +3,19 @@
     align-items: center;
     justify-content: flex-end;
 }
-.Link {
+.NavLink {
     margin: 1em;
     text-decoration: none;
     font-size: 1.5em;
+    font-weight: bold; 
     color: black;
 }
 @media only screen and (min-width: 600px) {
-    .Link {
+    .NavLink {
         font-size: 2em;
     }
+}
+
+.selected {
+    color: red;
 }
