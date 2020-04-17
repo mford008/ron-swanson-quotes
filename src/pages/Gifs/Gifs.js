@@ -1,37 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Masonry from 'react-masonry-component';
 
 import './Gifs.css';
 import Gif from '../../components/Gif/Gif';
 
-const masonryOptions = {
-  fitWidth: true,
-}
-class Gifs extends Component {
-  state = {
-    gifs: []
-  }
-
-  componentDidMount() {
+const Gifs = () => {
+  const [state, setState] = useState({
+    gifs: [],
+  });
+  useEffect(() => {
     fetch(`http://api.giphy.com/v1/gifs/search?q=ron+swanson&api_key=${process.env.REACT_APP_API_KEY}&limit=100`)
       .then(response => response.json())
       .then(data =>  {
-        console.log((data.data[0]));
-        this.setState({ gifs: data.data })
-        console.log(typeof(this.state.gifs), this.state.gifs);
+        setState({ gifs: data.data })
       });
-  }
+  }, []);
 
-  render() {
-    const childGifs = this.state.gifs.map((gif, id) => (
-        <Gif gif={gif}></Gif>
+    const childGifs = state.gifs.map((gif, id) => (
+        <Gif key={id} gif={gif}></Gif>
     ));
     return (
-        <Masonry className="Gifs" options={masonryOptions}>
+        <Masonry className="Gifs" options={{fitWidth: true}}>
           {childGifs}
         </Masonry>
     );
-  }
 }
 
 export default Gifs;
