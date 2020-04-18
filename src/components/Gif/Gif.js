@@ -1,6 +1,6 @@
 import React from 'react';
 import './Gif.css';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Gif = (props) => {
   return(
@@ -17,7 +17,7 @@ const Gif = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Gif;
