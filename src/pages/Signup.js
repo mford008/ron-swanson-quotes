@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { Card, Logo, Form, Input, Button } from '../components/AuthForm';
 
-function Signup() {
+const Signup = () => {
   return (
     <Card>
       <Form>
