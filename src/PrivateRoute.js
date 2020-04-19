@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import Splash from './pages/Splash/Splash.js';
 import { useAuth } from "./context/auth";
 
 
@@ -11,7 +12,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={props =>
         isAuthenticated ? (
-          <Component {...props} />
+          <Route path="/" component={Splash} exact />
         ) : (
           <Redirect to="/login" />
         )
