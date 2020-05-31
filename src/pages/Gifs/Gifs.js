@@ -16,9 +16,9 @@ const Gifs = () => {
       });
   }, []);
 
-    const childGifs = state.gifs.map((gif, id) => (
+    const childGifs = state.gifs ? state.gifs.map((gif, id) => (
         <Gif key={id} gif={gif}></Gif>
-    ));
+    )) : '';
     return (
         <Masonry className="Gifs" options={{fitWidth: true}}>
           {childGifs}
