@@ -9,7 +9,7 @@ const Gifs = () => {
     gifs: [],
   });
   useEffect(() => {
-    fetch(`http://api.giphy.com/v1/gifs/search?q=ron+swanson&api_key=${process.env.REACT_APP_API_KEY}&limit=150`)
+    fetch(`https://api.giphy.com/v1/gifs/search?q=ron+swanson&api_key=${process.env.REACT_APP_API_KEY}&limit=150`)
       .then(response => response.json())
       .then(data =>  {
         setState({ gifs: data.data })
